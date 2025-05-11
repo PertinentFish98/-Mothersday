@@ -23,9 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-giutnr5v%t1z@sa*pq1k8!tp%k*z6#yz#mt5w0zbiwxw96f_e$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["mothersday-dnsp.onrender.com"]
+ALLOWED_HOSTS = [
+    "mothersday-dnsp.onrender.com",  
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://mothersday-dnsp.onrender.com", 
+]
 
 
 # Application definition
@@ -130,4 +138,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOGIN_URL = '/login/'       
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+CSRF_COOKIE_SECURE  = True  
+SESSION_COOKIE_SECURE = True
 
